@@ -8,6 +8,7 @@ import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventContent from '../../components/event-detail/event-content';
 import ErrorAlert from '../../components/ui/error-alert';
+import Head from 'next/head';
 
 // const EventDetailPage = ({ selectedEvent }) => {
 const EventDetailPage = (props) => {
@@ -25,6 +26,13 @@ const EventDetailPage = (props) => {
 
   return (
     <>
+      <Head>
+        <title>{event.title}</title>
+        <meta
+          name='description'
+          content='Find a lot of great events that allow you to evolve...'
+        />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics event={event} />
       <EventContent>{event && <p>{event.description}</p>}</EventContent>

@@ -1,3 +1,6 @@
+//
+import Image from 'next/image';
+
 // component
 import Button from '../ui/button';
 import ArrowRightIcon from '../icons/arrow-right-icon';
@@ -22,7 +25,8 @@ const EventItem = ({ item }) => {
 
   return (
     <li className={styles.item}>
-      <img src={'/' + image} alt={title} />
+      <Image src={'/' + image} alt={title} width={250} height={160} />
+      {/* <img src={'/' + image} alt={title} /> */}
       <div className={styles.content}>
         <div className={styles.summary}>
           <h2>{title}</h2>
